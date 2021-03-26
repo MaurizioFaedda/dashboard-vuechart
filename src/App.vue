@@ -1,32 +1,42 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
-    <router-view />
+    <TheTopbar @togglenav="navOpen = !navOpen" />
+    <TheSidebar :open="navOpen" />
   </div>
 </template>
 
+<script>
+import TheTopbar from "./components/TheTopbar";
+import TheSidebar from "./components/TheSidebar";
+export default {
+  name: "App",
+  data: () => {
+    return {
+      navOpen: false,
+    };
+  },
+  components: {
+    TheTopbar,
+    TheSidebar,
+  },
+};
+</script>
+
 <style lang="scss">
-#app {
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  padding: 0;
+  font-size: 1rem;
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
 }
-
-#nav {
-  padding: 30px;
-
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-
-    &.router-link-exact-active {
-      color: #42b983;
-    }
-  }
+#app {
+  width: 100%;
+  min-height: 100vh;
+  background-color: #fbe9e5;
 }
 </style>
