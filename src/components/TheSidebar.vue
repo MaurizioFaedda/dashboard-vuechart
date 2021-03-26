@@ -31,6 +31,10 @@ export default {
           name: "chart-bar",
           path: "statistics",
         },
+        {
+          name: "cogs",
+          path: "settings",
+        },
       ],
     };
   },
@@ -44,7 +48,7 @@ export default {
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  position: absolute;
+  position: relative;
   flex-direction: column;
   width: 60px;
   height: calc(100vh - 50px);

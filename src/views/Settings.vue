@@ -1,7 +1,7 @@
 <template>
   <div>
     <section class="mt-1">
-      <title-view class="text-left font-weight-bold">Statistics</title-view>
+      <title-view class="text-left font-weight-bold">Settings</title-view>
     </section>
   </div>
 </template>

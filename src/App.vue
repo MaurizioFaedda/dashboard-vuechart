@@ -1,10 +1,12 @@
 <template>
   <div id="app">
     <TheTopbar @togglenav="navOpen = !navOpen" />
-    <TheSidebar :open="navOpen" />
-    <main>
-      <router-view />
-    </main>
+    <div class="d-flex">
+      <TheSidebar :open="navOpen" />
+      <main class="px-2">
+        <router-view />
+      </main>
+    </div>
   </div>
 </template>
 
@@ -16,7 +18,7 @@ export default {
   name: "App",
   data: () => {
     return {
-      navOpen: false,
+      navOpen: true,
     };
   },
   components: {

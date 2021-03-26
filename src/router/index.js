@@ -2,6 +2,7 @@ import Vue from "vue";
 import VueRouter from "vue-router";
 import Home from "../views/Home.vue";
 import Statistics from "../views/Statistics.vue";
+import Settings from "../views/Settings.vue";
 
 Vue.use(VueRouter);
 
@@ -15,6 +16,11 @@ const routes = [
         path: '/statistcs',
         name: 'statistics',
         component: Statistics,
+    },
+    {
+        path: '/settings',
+        name: 'settings',
+        component: Settings,
     }
 ];
 
