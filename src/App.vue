@@ -2,12 +2,16 @@
   <div id="app">
     <TheTopbar @togglenav="navOpen = !navOpen" />
     <TheSidebar :open="navOpen" />
+    <main>
+      <router-view />
+    </main>
   </div>
 </template>
 
 <script>
 import TheTopbar from "./components/TheTopbar";
 import TheSidebar from "./components/TheSidebar";
+
 export default {
   name: "App",
   data: () => {
@@ -23,6 +27,8 @@ export default {
 </script>
 
 <style lang="scss">
+@import "./scss/_variables.scss";
+
 * {
   box-sizing: border-box;
 }
@@ -37,6 +43,6 @@ body {
 #app {
   width: 100%;
   min-height: 100vh;
-  background-color: #fbe9e5;
+  background-color: $lighter_color;
 }
 </style>

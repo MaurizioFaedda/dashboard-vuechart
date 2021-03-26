@@ -2,15 +2,15 @@
   <transition name="show">
     <div class="sidebar" v-if="open">
       <transition-group appear name="fade">
-        <a
-          href="#"
+        <router-link
           class="sidebar-element"
           v-for="(item, index) in navElements"
-          :key="item"
+          :key="item.name"
           :style="{ '--index': index }"
+          :to="{ name: item.path }"
         >
-          <fa-icon class="icon" :icon="['fas', item]" size="2x" />
-        </a>
+          <fa-icon class="icon" :icon="['fas', item.name]" size="2x" />
+        </router-link>
       </transition-group>
     </div>
   </transition>
@@ -21,23 +21,36 @@ export default {
   props: ["open"],
   data: () => {
     return {
-      navElements: ["home", "chart-bar", "envelope", "cogs"],
+      //   navElements: ["home", "chart-bar", "envelope", "cogs"],
+      navElements: [
+        {
+          name: "home",
+          path: "home",
+        },
+        {
+          name: "chart-bar",
+          path: "statistics",
+        },
+      ],
     };
   },
 };
 </script>
 
 <style lang="scss" scoped>
+@import "@/scss/_variables.scss";
+
 .sidebar {
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  position: relative;
+  position: absolute;
   flex-direction: column;
   width: 60px;
   height: calc(100vh - 50px);
   padding-top: 48px;
-  background-color: #ed5d42;
+  background-color: $main_color;
+  z-index: 2;
   .sidebar-element {
     display: flex;
     justify-content: center;
@@ -46,10 +59,10 @@ export default {
     height: 60px;
     margin-bottom: 8px;
     cursor: pointer;
-    color: #fefefe;
-    background-color: #fead98;
+    color: $text_color;
+    background-color: $light_color;
     &:hover {
-      color: #ed5d42;
+      color: $main_color;
     }
   }
 }

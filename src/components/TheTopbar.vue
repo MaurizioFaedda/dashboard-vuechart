@@ -17,14 +17,16 @@
 </template>
 
 <style lang="scss" scoped>
+@import "@/scss/_variables.scss";
+
 .topbar {
   display: flex;
   justify-content: space-between;
   width: 100vw;
   height: 50px;
   padding: 10px 16px;
-  background-color: #ed5d42;
-  color: #fefefe;
+  background-color: $main_color;
+  color: $text_color;
   .icon {
     cursor: pointer;
   }
@@ -34,8 +36,8 @@
     padding: 5px;
     margin-left: 10px;
     cursor: pointer;
-    color: #ed5d42;
-    background-color: #fbe9e5;
+    color: $main_color;
+    background-color: $lighter_color;
     border-radius: 50%;
   }
 }
