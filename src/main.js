@@ -4,6 +4,8 @@ import App from "./App.vue";
 import router from "./router";
 import store from "./store";
 import './icons'
+import AxiosPlugin from "./plugins/AxiosPlugin.js";
+
 
 
 Vue.config.productionTip = false;
@@ -13,6 +15,7 @@ import "bootstrap-vue/dist/bootstrap-vue.css";
 
 Vue.use(BootstrapVue);
 Vue.use(IconsPlugin)
+Vue.use(AxiosPlugin);
 
 
 new Vue({
