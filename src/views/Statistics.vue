@@ -1,17 +1,18 @@
 <template>
   <div>
-    <section class="mt-1">
+    <section class="mt-1 w-100">
       <h1 class="text-left font-weight-bold title-view">Statistics</h1>
-      <div class="row mt-5" v-if="arrMonthlyConnections.length > 0">
-        <div class="col">
-          <h2 class="text-center">MonthlyConnections</h2>
-          <line-chart
-            :data="arrMonthlyConnections"
-            :labels="arrMonths"
-            :options="chartOptions"
-            :label="labelMonthlyConnections"
-          />
-        </div>
+      <div class="mx-auto" v-if="arrMonthlyConnections.length > 0">
+        <h5 class="text-center">MonthlyConnections</h5>
+        <line-chart
+          class="d-flex justify-content-center"
+          width="80%"
+          height="250px"
+          :data="arrMonthlyConnections"
+          :labels="arrMonths"
+          :options="chartOptions"
+          :label="labelMonthlyConnections"
+        />
       </div>
     </section>
   </div>

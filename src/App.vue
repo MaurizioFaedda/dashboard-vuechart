@@ -3,7 +3,7 @@
     <TheTopbar @togglenav="navOpen = !navOpen" />
     <div class="d-flex">
       <TheSidebar :open="navOpen" />
-      <main class="px-2">
+      <main class="px-2 w-100">
         <router-view />
       </main>
     </div>

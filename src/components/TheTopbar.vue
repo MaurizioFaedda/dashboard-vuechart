@@ -22,7 +22,7 @@
 .topbar {
   display: flex;
   justify-content: space-between;
-  width: 100vw;
+  width: 100%;
   height: 50px;
   padding: 10px 16px;
   background-color: $main_color;
