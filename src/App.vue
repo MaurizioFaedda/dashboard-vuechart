@@ -16,14 +16,14 @@ import TheSidebar from "./components/TheSidebar";
 
 export default {
   name: "App",
+  components: {
+    TheTopbar,
+    TheSidebar,
+  },
   data: () => {
     return {
       navOpen: true,
     };
-  },
-  components: {
-    TheTopbar,
-    TheSidebar,
   },
 };
 </script>
